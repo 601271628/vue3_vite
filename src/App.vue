@@ -17,7 +17,9 @@
 
   <!-- <comp></comp> -->
 
-  <watchV></watchV>
+  <!-- <watchV></watchV> -->
+
+  <watchEffect></watchEffect>
 </template>
 
 <script>
@@ -25,10 +27,11 @@ import setupF from "./components/setupF.vue"
 import demo from "./components/demo.vue"
 import comp from "./components/comp.vue"
 import watchV from "./components/watchV.vue"
+import watchEffect from "./components/watchEffect.vue"
 import { reactive } from 'vue'
 export default {
   name: 'App',
-  components: { setupF, demo, comp, watchV },
+  components: { setupF, demo, comp, watchV, watchEffect },
   setup() {
     let person = reactive([
       { name: "小明1", age: 20 },
