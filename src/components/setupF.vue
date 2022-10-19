@@ -10,7 +10,7 @@
 // import { h } from 'vue';
 import { ref, reactive } from "vue"
 export default {
-  name: 'App',
+  name: 'setupF',
   setup() {
     // ================================ data ================================
     // 这个不是响应式的
