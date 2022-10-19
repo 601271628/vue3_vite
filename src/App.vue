@@ -1,32 +1,45 @@
 <template>
   <!-- <setupF></setupF> -->
 
-  <!-- <demo
+  <demo
     @hello="helloFunc"
     name="name111"
+    :person="person"
   >
-    <template v-slot:aaa>
-      <span>123</span>
+    <template v-slot:aaa="scope">
+      <ul>
+        <li v-for="item in scope.row">
+          {{item.name}}--{{item.age}}
+        </li>
+      </ul>
     </template>
-  </demo> -->
+  </demo>
 
-  <comp></comp>
+  <!-- <comp></comp> -->
 </template>
 
 <script>
 import setupF from "./components/setupF.vue"
 import demo from "./components/demo.vue"
 import comp from "./components/comp.vue"
+import { reactive } from 'vue'
 export default {
   name: 'App',
   components: { setupF, demo, comp },
   setup() {
+    let person = reactive([
+      { name: "小明1", age: 20 },
+      { name: "小明2", age: 21 },
+      { name: "小明3", age: 22 },
+    ])
+
     function helloFunc(data) {
       alert(data)
     }
 
     return {
-      helloFunc
+      helloFunc,
+      person
     }
   }
 }
