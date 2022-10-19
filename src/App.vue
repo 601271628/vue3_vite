@@ -19,7 +19,10 @@
 
   <!-- <watchV></watchV> -->
 
-  <watchEffect></watchEffect>
+  <!-- <watchEffect></watchEffect> -->
+
+  <button @click="show = !show">测试beforeUnmounted(beforeDestoy)</button>
+  <lifeCycle v-if="show"></lifeCycle>
 </template>
 
 <script>
@@ -28,10 +31,11 @@ import demo from "./components/demo.vue"
 import comp from "./components/comp.vue"
 import watchV from "./components/watchV.vue"
 import watchEffect from "./components/watchEffect.vue"
-import { reactive } from 'vue'
+import lifeCycle from "./components/lifeCycle.vue"
+import { reactive, ref } from 'vue'
 export default {
   name: 'App',
-  components: { setupF, demo, comp, watchV, watchEffect },
+  components: { setupF, demo, comp, watchV, watchEffect, lifeCycle },
   setup() {
     let person = reactive([
       { name: "小明1", age: 20 },
@@ -43,9 +47,12 @@ export default {
       alert(data)
     }
 
+    let show = ref(true)
+
     return {
       helloFunc,
-      person
+      person,
+      show
     }
   }
 }
