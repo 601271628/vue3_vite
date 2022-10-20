@@ -11,6 +11,7 @@
 import { ref, reactive } from "vue"
 export default {
   name: 'setupF',
+  // setup也可以使用async修饰 返回return await promise(()=>{}) 到那时需要使用defineAsyncComponent组件动态引入和suspense
   setup() {
     // ================================ data ================================
     // 这个不是响应式的

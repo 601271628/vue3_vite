@@ -31,8 +31,10 @@
 
   <!-- <customRef></customRef> -->
 
-  <h1>{{person[0].name}}--{{person[0].age}}</h1>
-  <child></child>
+  <!-- <h1>{{person[0].name}}--{{person[0].age}}</h1>
+  <child></child> -->
+
+  <suspenseV></suspenseV>
 
 </template>
 
@@ -48,11 +50,12 @@ import toRef from "./components/toRef.vue"
 import readOnly from "./components/readOnly.vue"
 import customRef from "./components/customRef.vue"
 import child from "./components/childrens/child.vue"
+import suspenseV from "./components/suspense.vue"
 
 import { reactive, ref, provide } from 'vue'
 export default {
   name: 'App',
-  components: { setupF, demo, comp, watchV, watchEffect, lifeCycle, useHook, toRef, readOnly, customRef, child },
+  components: { setupF, demo, comp, watchV, watchEffect, lifeCycle, useHook, toRef, readOnly, customRef, child, suspenseV },
   setup() {
     let person = reactive([
       { name: "小明1", age: 20 },

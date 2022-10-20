@@ -8,8 +8,8 @@
 </template>
 
 <script>
-import Dialog from "./dialog.vue"
 import { inject } from "vue"
+import Dialog from "./dialog.vue"
 export default {
   name: 'grandson',
   components: { Dialog },
