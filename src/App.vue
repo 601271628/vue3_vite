@@ -21,9 +21,11 @@
 
   <!-- <watchEffect></watchEffect> -->
 
-  <button @click="show = !show">测试beforeUnmounted(beforeDestoy)</button>
+  <!-- <button @click="show = !show">测试beforeUnmounted(beforeDestoy)</button> -->
   <!-- <lifeCycle v-if="show"></lifeCycle> -->
-  <useHook v-if="show"></useHook>
+  <!-- <useHook v-if="show"></useHook> -->
+
+  <toRef></toRef>
 </template>
 
 <script>
@@ -34,10 +36,11 @@ import watchV from "./components/watchV.vue"
 import watchEffect from "./components/watchEffect.vue"
 import lifeCycle from "./components/lifeCycle.vue"
 import useHook from "./components/useHook.vue"
+import toRef from "./components/toRef.vue"
 import { reactive, ref } from 'vue'
 export default {
   name: 'App',
-  components: { setupF, demo, comp, watchV, watchEffect, lifeCycle, useHook },
+  components: { setupF, demo, comp, watchV, watchEffect, lifeCycle, useHook, toRef },
   setup() {
     let person = reactive([
       { name: "小明1", age: 20 },
