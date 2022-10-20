@@ -29,7 +29,11 @@
 
   <!-- <readOnly></readOnly> -->
 
-  <customRef></customRef>
+  <!-- <customRef></customRef> -->
+
+  <h1>{{person[0].name}}--{{person[0].age}}</h1>
+  <child></child>
+
 </template>
 
 <script>
@@ -43,11 +47,12 @@ import useHook from "./components/useHook.vue"
 import toRef from "./components/toRef.vue"
 import readOnly from "./components/readOnly.vue"
 import customRef from "./components/customRef.vue"
+import child from "./components/childrens/child.vue"
 
-import { reactive, ref } from 'vue'
+import { reactive, ref, provide } from 'vue'
 export default {
   name: 'App',
-  components: { setupF, demo, comp, watchV, watchEffect, lifeCycle, useHook, toRef, readOnly, customRef },
+  components: { setupF, demo, comp, watchV, watchEffect, lifeCycle, useHook, toRef, readOnly, customRef, child },
   setup() {
     let person = reactive([
       { name: "小明1", age: 20 },
@@ -61,6 +66,9 @@ export default {
 
     let show = ref(true)
 
+    // provide
+    provide('person', person)
+
     return {
       helloFunc,
       person,
@@ -69,3 +77,10 @@ export default {
   }
 }
 </script>
+
+<style>
+#app {
+  background-color: beige;
+  padding: 10px;
+}
+</style>
