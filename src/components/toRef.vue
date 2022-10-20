@@ -46,10 +46,11 @@
 </template>
 
 <script>
-import { reactive, toRef, ref, toRefs } from 'vue';
+import { reactive, toRef, ref, toRefs, shallowReactive, shallowRef } from 'vue';
 export default {
   name: 'toRef',
   setup() {
+    // shallowReactive和reactive的区别就是 shallowReactive不进行深度监听 只监听一层
     let obj = reactive({
       name: '小明',
       age: 20,
