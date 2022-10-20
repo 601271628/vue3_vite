@@ -27,7 +27,9 @@
 
   <!-- <toRef></toRef> -->
 
-  <readOnly></readOnly>
+  <!-- <readOnly></readOnly> -->
+
+  <customRef></customRef>
 </template>
 
 <script>
@@ -40,10 +42,12 @@ import lifeCycle from "./components/lifeCycle.vue"
 import useHook from "./components/useHook.vue"
 import toRef from "./components/toRef.vue"
 import readOnly from "./components/readOnly.vue"
+import customRef from "./components/customRef.vue"
+
 import { reactive, ref } from 'vue'
 export default {
   name: 'App',
-  components: { setupF, demo, comp, watchV, watchEffect, lifeCycle, useHook, toRef, readOnly },
+  components: { setupF, demo, comp, watchV, watchEffect, lifeCycle, useHook, toRef, readOnly, customRef },
   setup() {
     let person = reactive([
       { name: "小明1", age: 20 },
