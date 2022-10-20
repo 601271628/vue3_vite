@@ -1,13 +1,18 @@
 <template>
   <div id='grandson'>
     <h1>我是grandson组件:{{person[0].name}}--{{person[0].age}}</h1>
+
+    <!--  -->
+    <Dialog></Dialog>
   </div>
 </template>
 
 <script>
+import Dialog from "./dialog.vue"
 import { inject } from "vue"
 export default {
   name: 'grandson',
+  components: { Dialog },
   setup() {
     return {
       person: inject('person')
